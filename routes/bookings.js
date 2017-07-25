@@ -26,7 +26,7 @@ router.post("bookings", function(req, res, next) {
     } else {
       db.bookings.save(booking, function(err, savedBooking) {
         if (err) {
-          res.send(err)''
+          res.send(err);
         }
         res.json(savedBooking);
       });
