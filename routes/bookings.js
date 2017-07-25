@@ -15,7 +15,7 @@ router.get("/bookings", function(req, res, next) {
 module.exports = router;
 
 
-router.post("bookings", function(req, res, next) {
+router.post("/bookings", function(req, res, next) {
   var booking = req.body.data;
 
     if (!booking.userName) {
@@ -31,4 +31,4 @@ router.post("bookings", function(req, res, next) {
         res.json(savedBooking);
       });
     }
-})
+});
