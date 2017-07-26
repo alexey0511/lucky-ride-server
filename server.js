@@ -8,7 +8,7 @@ var driverLocation = require("./routes/driverLocation");
 
 var app = express();
 
-var port = 3001;
+var port = Number(process.env.PORT || 5001);
 
 var socket_io = require("socket.io");
 
