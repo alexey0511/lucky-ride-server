@@ -17,6 +17,8 @@ module.exports = router;
 
 router.post("/bookings", function(req, res, next) {
   var booking = req.body.data;
+  var nearByDriver = req.body.nearByDriver;
+  var io = req.app.io;
 
     if (!booking.userName) {
       res.status(400);
@@ -29,6 +31,12 @@ router.post("/bookings", function(req, res, next) {
           res.send(err);
         }
         res.json(savedBooking);
+
+        if (nearByDriver.socketId) {
+          io.emit(nearByDriver.socketId = "driverRequest", savedBooking);
+        } else {
+          console.log("Driver not connected");
+        }
       });
     }
 });
