@@ -6,6 +6,7 @@ var db = mongojs("mongodb://alexey:alexey@ds121483.mlab.com:21483/lucky_ride", [
 
 //Get Single Driver
 router.get("/driver/:id", function(req, res, next){
+    res.send("hello");
     db.drivers.findOne({_id: mongojs.ObjectId(req.params.id)},function(err, driver){
         if (err){
             res.send(err, req.params.id);
