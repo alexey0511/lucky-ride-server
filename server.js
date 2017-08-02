@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 
 var index = require("./routes/index");
 var bookings = require("./routes/bookings");
-var driver = require("./routes/driver");
+var driver = require("./routes/drivers");
 var driverLocation = require("./routes/driverLocation");
 
 var app = express();
