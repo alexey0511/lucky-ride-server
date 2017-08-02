@@ -10,7 +10,7 @@ router.get("/api/driver/:id", function(req, res, next){
         if (err){
             res.send(err, req.params.id);
         }
-        res.send(driver);
+        res.json(driver);
     });
 });
 
