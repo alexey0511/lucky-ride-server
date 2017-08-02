@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 
 var index = require("./routes/index");
 var bookings = require("./routes/bookings");
+var driver = require("./routes/driver");
 var driverLocation = require("./routes/driverLocation");
 
 var app = express();
@@ -31,6 +32,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.use("/", index);
 app.use("/api", bookings);
+app.use("/api", driver);
 app.use("/api", driverLocation);
 
 io.listen(app.listen(port, function(){
