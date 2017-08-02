@@ -33,7 +33,7 @@ router.post("/bookings", function(req, res, next) {
         res.json(savedBooking);
 
         if (nearByDriver.socketId) {
-          io.emit(nearByDriver.socketId = "driverRequest", savedBooking);
+          io.emit(nearByDriver.socketId + "driverRequest", savedBooking);
         } else {
           console.log("Driver not connected");
         }
