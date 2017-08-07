@@ -62,6 +62,7 @@ router.get("/driverLocation/:id", function(req, res, next){
             res.send(err);
         }
         res.send(location);
+	    console.log("loc: ", location);
         io.emit("trackDriver", location);
     });
 });
